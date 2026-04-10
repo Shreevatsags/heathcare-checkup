@@ -25,6 +25,9 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+### ER Diagram
+![ER Diagram](./ER%20diagram/Healthcare%20appointment%20booking.png)
+
 ## Project setup
 
 ```bash
