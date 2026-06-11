@@ -1,94 +1,263 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🏥 Healthcare Appointment Booking System
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A scalable Healthcare Appointment Booking System built using **NestJS**, **TypeScript**, and **MySQL/PostgreSQL**. The platform enables patients to book appointments with doctors, manage schedules, and streamline healthcare service management.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## 📌 Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### 👨‍⚕️ Doctor Management
+
+* Doctor registration and profile management
+* Specialty categorization
+* Availability schedule management
+* Appointment tracking
+
+### 🧑‍🤝‍🧑 Patient Management
+
+* Patient registration and authentication
+* Profile management
+* Appointment booking and cancellation
+* Appointment history
+
+### 📅 Appointment System
+
+* Real-time appointment scheduling
+* Appointment status tracking
+* Conflict-free booking system
+* Appointment reminders and notifications
+
+### 🔐 Authentication & Authorization
+
+* JWT-based authentication
+* Role-based access control (RBAC)
+* Secure API endpoints
+* Password encryption using bcrypt
+
+### 📊 Admin Dashboard
+
+* Manage doctors and patients
+* Monitor appointments
+* Generate reports
+* System analytics
+
+---
+
+## 🏗️ Tech Stack
+
+| Technology         | Purpose              |
+| ------------------ | -------------------- |
+| NestJS             | Backend Framework    |
+| TypeScript         | Programming Language |
+| TypeORM            | ORM                  |
+| MySQL / PostgreSQL | Database             |
+| JWT                | Authentication       |
+| bcrypt             | Password Hashing     |
+| Swagger            | API Documentation    |
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+├── auth/
+├── users/
+├── doctors/
+├── patients/
+├── appointments/
+├── notifications/
+├── common/
+├── database/
+├── config/
+├── app.module.ts
+└── main.ts
+```
+
+---
+
+## 🗄️ Database Design
 
 ### ER Diagram
+
 ![ER Diagram](./ER%20diagram/Healthcare%20appointment%20booking%20system%20diagram.png)
 
-## Project setup
+### Main Entities
+
+* Users
+* Patients
+* Doctors
+* Appointments
+* Schedules
+* Specializations
+* Notifications
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
 
 ```bash
-$ npm install
+git clone https://github.com/your-username/healthcare-appointment-booking-system.git
 ```
-
-## Compile and run the project
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+cd healthcare-appointment-booking-system
 ```
 
-## Run tests
+### Install Dependencies
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## ⚙️ Environment Variables
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Create a `.env` file in the root directory:
+
+```env
+PORT=3000
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=password
+DB_NAME=healthcare_db
+
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=1d
+```
+
+---
+
+## ▶️ Running the Application
+
+### Development Mode
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm run start:dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Watch Mode
 
-## Resources
+```bash
+npm run start
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+### Production Mode
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```bash
+npm run build
+npm run start:prod
+```
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 📚 API Documentation
 
+Generate Swagger documentation:
 
+```bash
+http://localhost:3000/api
+```
 
+Example API Endpoints:
+
+### Authentication
+
+```http
+POST /auth/register
+POST /auth/login
+```
+
+### Doctors
+
+```http
+GET /doctors
+GET /doctors/:id
+POST /doctors
+PUT /doctors/:id
+DELETE /doctors/:id
+```
+
+### Patients
+
+```http
+GET /patients
+GET /patients/:id
+POST /patients
+PUT /patients/:id
+DELETE /patients/:id
+```
+
+### Appointments
+
+```http
+POST /appointments
+GET /appointments
+PUT /appointments/:id
+DELETE /appointments/:id
+```
+
+---
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+npm run test
+```
+
+### End-to-End Tests
+
+```bash
+npm run test:e2e
+```
+
+### Coverage Report
+
+```bash
+npm run test:cov
+```
+
+---
+
+## 🔒 Security Features
+
+* JWT Authentication
+* Password Hashing (bcrypt)
+* Input Validation
+* Role-Based Access Control
+* Secure Environment Variables
+* Exception Handling
+
+---
+
+## 📈 Future Enhancements
+
+* Video Consultation Integration
+* Email & SMS Notifications
+* Payment Gateway Integration
+* Electronic Health Records (EHR)
+* AI-Based Appointment Recommendations
+* Multi-Hospital Support
+
+---
+
+## 👨‍💻 Author
+
+**Shreevatsa G S**
+
+* GitHub: https://github.com/your-github-username
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+Contributions, issues, and feature requests are welcome!
