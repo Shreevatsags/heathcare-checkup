@@ -252,8 +252,6 @@ npm run test:cov
 
 **Shreevatsa G S**
 
-* GitHub: https://github.com/your-github-username
-
 ---
 
 ## ⭐ Support
