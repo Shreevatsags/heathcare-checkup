@@ -254,8 +254,4 @@ npm run test:cov
 
 ---
 
-## ⭐ Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
-
-Contributions, issues, and feature requests are welcome!
